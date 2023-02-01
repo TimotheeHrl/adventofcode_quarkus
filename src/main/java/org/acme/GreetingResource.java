@@ -27,21 +27,23 @@ public class GreetingResource {
             Integer pair2Min = Integer.parseInt(pair2Str[0]);
             Integer pair2Max = Integer.parseInt(pair2Str[1]);
 
-            if (pair1Max >= pair2Min && pair1Max <= pair2Max && pair1Min >= pair2Min && pair1Min <= pair2Max
-            || pair2Max >= pair1Min && pair2Max <= pair1Max && pair2Min >= pair1Min && pair2Min <= pair1Max) {
-                LOG.info("______________________________NEW PAIRS______________________________________________________________");
+            if (pair1Max >= pair2Min
+             && pair1Max <= pair2Max
+             || pair1Min >= pair2Min
+             && pair1Min <= pair2Max
+             || pair2Min >= pair1Min
+             && pair2Min <= pair1Max
+             || pair2Max >= pair1Min
+             && pair2Max <= pair1Max
+            ) {
 
-                LOG.info("pair1Max: " + pair1Max);
-                LOG.info("pair1Min: " + pair1Min);
-                LOG.info("pair2Min: " + pair2Min);
-                LOG.info("pair2Max: " + pair2Max);
-                count++;
-            } else{
-                LOG.info("______________________________NOT PAIRING______________________________________________________________");
-                LOG.info("NOT___pair1Max: " + pair1Max);
-                LOG.info("NOT___pair1Min: " + pair1Min);
-                LOG.info("NOT___pair2Min: " + pair2Min);
-                LOG.info("NOT___pair2Max: " + pair2Max);
+                    LOG.info("______________________________NEW OVERLAPS______________________________________________________________");
+                    LOG.info("pair1Max: " + pair1Max);
+                    LOG.info("pair1Min: " + pair1Min);
+                    LOG.info("pair2Min: " + pair2Min);
+                    LOG.info("pair2Max: " + pair2Max);
+                    count++;
+
             }
         }
         return count.toString();
